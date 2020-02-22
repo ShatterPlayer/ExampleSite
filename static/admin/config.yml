@@ -4,12 +4,29 @@ backend:
 media_folder: static/assets
 public_folder: /assets
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: tours
+    label: Wycieczki
+    folder: tours
     create: true
+    identifier_field: name
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Nazwa", name: "title", widget: "string" }
+      - { label: "Data publikacji", name: "date", widget: "datetime" }
+      - { label: "Kontynent", name: "continent", widget: "string" }
+      - { label: "Państwo", name: "country", widget: "string" }
+      - { label: "Miasto", name: "city", widget: "string" }
+      - { label: "Wylot (miejsce)", name: "departure", widget: "string" }
+      - { label: "Przylot (miejsce)", name: "arrival", widget: "string" }
+      - {
+          label: "0cena",
+          name: "rating",
+          widget: "number",
+          min: 0,
+          max: 10,
+          valueType: "float",
+        }
+      - { label: "Hotel", name: "hotel", widget: "string" }
+      - { label: "Obraz", name: "thumbnail", widget: "image" }
+      - { label: "Cena", name: "price", widget: "number" }
+      - { label: "Promocja", name: "promotion", widget: "boolean" }
+      - { label: "Treść", name: "body", widget: "markdown" }

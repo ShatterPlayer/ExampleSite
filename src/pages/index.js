@@ -1,21 +1,39 @@
 import React from "react"
-import { Link } from "gatsby"
+import { createGlobalStyle } from "styled-components"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+// Images
+import background from "../images/slider/bg.jpg"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+// Components
+import TopLine from "../components/TopLine"
+import Navigation from "../components/Navigation"
+import TopArea from "../components/TopArea"
+import SearchArea from "../components/SearchArea"
+
+const GlobalStyle = createGlobalStyle`
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+`
+
+const IndexPage = () => {
+  return (
+    <>
+      <TopArea>
+        <TopLine />
+        <Navigation />
+        <SearchArea />
+      </TopArea>
+      <GlobalStyle />
+    </>
+  )
+}
 
 export default IndexPage
