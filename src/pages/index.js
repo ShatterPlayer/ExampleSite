@@ -1,9 +1,6 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
 
-// Images
-import background from "../images/slider/bg.jpg"
-
 // Components
 import TopLine from "../components/TopLine"
 import Navigation from "../components/Navigation"

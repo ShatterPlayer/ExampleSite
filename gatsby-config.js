@@ -33,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/blog`,
-        name: `blog_entries`,
+        path: `${__dirname}/tours`,
+        name: `tours`,
       },
     },
     `gatsby-transformer-remark`,
