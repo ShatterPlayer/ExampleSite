@@ -6,6 +6,7 @@ import TopLine from "../components/TopLine"
 import Navigation from "../components/Navigation"
 import TopArea from "../components/TopArea"
 import SearchArea from "../components/SearchArea"
+import TopTours from "../components/TopTours"
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -18,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
     color: white;
     text-decoration: none;
   }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
 `
 
 const IndexPage = () => {
@@ -28,6 +33,7 @@ const IndexPage = () => {
         <Navigation />
         <SearchArea />
       </TopArea>
+      <TopTours />
       <GlobalStyle />
     </>
   )

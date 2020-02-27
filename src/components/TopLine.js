@@ -40,6 +40,7 @@ const Padlock = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-color: #181818;
+  margin-right: 10px;
 `
 
 const Phone = styled.div`

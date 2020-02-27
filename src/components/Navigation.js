@@ -7,6 +7,8 @@ import logoImage from "../images/logo.png"
 import facebookImage from "../images/social/facebook.png"
 import youtubeImage from "../images/social/youtube.png"
 import snapImage from "../images/social/snap.png"
+import lastminuteImage from "../images/icons/label-lastminute.png"
+import promotionImage from "../images/icons/label-promotion.png"
 
 // Components
 import ContentWrapper from "./ContentWrapper"
@@ -35,6 +37,7 @@ const Nav = styled.nav`
 
 const StyledLink = styled(Link)`
   padding: 0 15px;
+  position: relative;
 
   :first-child {
     padding-left: 0;
@@ -59,6 +62,12 @@ const SocialIcon = styled.a`
   background-size: cover;
 `
 
+const Icon = styled.img`
+  position: absolute;
+  top: -8px;
+  right: 0;
+`
+
 function Navigation() {
   return (
     <Container>
@@ -73,9 +82,11 @@ function Navigation() {
         </StyledLink>
         <StyledLink to="/lastminute" activeStyle={activeLinkStyle}>
           last minute
+          <Icon src={lastminuteImage} alt="lastminute" />
         </StyledLink>
         <StyledLink to="/promotions" activeStyle={activeLinkStyle}>
           promocje
+          <Icon src={promotionImage} alt="promotion" />
         </StyledLink>
         <StyledLink to="/news" activeStyle={activeLinkStyle}>
           aktualności

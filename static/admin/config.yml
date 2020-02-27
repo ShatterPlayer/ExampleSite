@@ -12,13 +12,18 @@ collections:
     fields:
       - { label: "Nazwa", name: "title", widget: "string" }
       - { label: "Data publikacji", name: "date", widget: "datetime" }
-      - { label: "Kontynent", name: "continent", widget: "string" }
+      - {
+          label: "Kontynent",
+          name: "continent",
+          widget: "select",
+          options: ["Afryka", "Europa", "Azja", "Ameryka", "Australia"],
+        }
       - { label: "Państwo", name: "country", widget: "string" }
       - { label: "Miasto", name: "city", widget: "string" }
       - { label: "Wylot (miejsce)", name: "departure", widget: "string" }
       - { label: "Przylot (miejsce)", name: "arrival", widget: "string" }
       - {
-          label: "0cena",
+          label: "Ocena",
           name: "rating",
           widget: "number",
           min: 0,
@@ -29,4 +34,5 @@ collections:
       - { label: "Obraz", name: "thumbnail", widget: "image" }
       - { label: "Cena", name: "price", widget: "number" }
       - { label: "Promocja", name: "promotion", widget: "boolean" }
+      - { label: "Last Minute", name: "lastMinute", widget: "boolean" }
       - { label: "Treść", name: "body", widget: "markdown" }
