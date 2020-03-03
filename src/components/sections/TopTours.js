@@ -23,7 +23,7 @@ const ToursContainer = styled.div`
 function TopTours() {
   const TOURS_QUERY = graphql`
     query ToursQuery {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         nodes {
           id
           frontmatter {

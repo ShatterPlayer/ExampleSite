@@ -83,6 +83,7 @@ const DetailsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 0 5px;
 `
 
 const PriceButtonWrapper = styled.div`
@@ -91,33 +92,41 @@ const PriceButtonWrapper = styled.div`
 
 function TourCardExtended({ tour }) {
   const {
-    frontmatter: { thumbnail },
+    frontmatter: {
+      thumbnail,
+      country,
+      city,
+      departure,
+      arrival,
+      rating,
+      hotel,
+      price,
+    },
+    excerpt,
   } = tour
+
+  const tourRating = `${rating} / 10`
   return (
     <Container>
       <ImageContainer fluid={thumbnail.childImageSharp.fluid}>
         <ImageTextContainer>
-          <Country>Egipt</Country>
-          <City>Sharm El Sheikh</City>
+          <Country>{country}</Country>
+          <City>{city}</City>
         </ImageTextContainer>
       </ImageContainer>
       <Content>
-        <Text>
-          Cras odio diam, interdum sed magna non, ornare congue ante. Ut vel
-          metus augue. Etiam sed enim ege stas, ornare lorem vitae, ultricies
-          mi. Fusce eu posuere libero, eget tempor mi.
-        </Text>
+        <Text>{excerpt}</Text>
         <HorizontalLine />
         <DetailsContainer>
-          <TourDetail image={plane1Img} name="Wylot" value="Kraków, AirPort" />
-          <TourDetail image={plane2Img} name="Przylot" value="Egipt, Sharm" />
+          <TourDetail image={plane1Img} name="Wylot" value={departure} />
+          <TourDetail image={plane2Img} name="Przylot" value={arrival} />
         </DetailsContainer>
         <DetailsContainer>
-          <TourDetail image={starImg} name="Ocena" value="8,5 / 10" />
-          <TourDetail image={bedImg} name="Hotel" value="Egipt, Sharm" />
+          <TourDetail image={starImg} name="Ocena" value={tourRating} />
+          <TourDetail image={bedImg} name="Hotel" value={hotel} />
         </DetailsContainer>
         <PriceButtonWrapper>
-          <PriceButton price={899} />
+          <PriceButton price={price} />
         </PriceButtonWrapper>
       </Content>
     </Container>

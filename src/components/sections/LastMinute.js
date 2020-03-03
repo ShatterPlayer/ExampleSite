@@ -27,13 +27,21 @@ function LastMinute() {
   const TOURS_QUERY = graphql`
     query LastMinute {
       allMarkdownRemark(
-        sort: { fields: frontmatter___date }
+        sort: { fields: frontmatter___date, order: DESC }
         filter: { frontmatter: { lastMinute: { eq: true } } }
         limit: 2
       ) {
         nodes {
           id
+          excerpt
           frontmatter {
+            city
+            country
+            departure
+            arrival
+            rating
+            hotel
+            price
             thumbnail {
               childImageSharp {
                 fluid {
