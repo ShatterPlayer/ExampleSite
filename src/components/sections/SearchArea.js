@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 // Components
-import SearchBar from "./SearchBar"
+import SearchBar from "../SearchBar"
 
 const Container = styled.div`
   display: flex;

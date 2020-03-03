@@ -1,46 +1,39 @@
 import React from "react"
 import styled from "styled-components"
+import bgImage from "../../images/lastminute/bg.jpg"
 import { useStaticQuery, graphql } from "gatsby"
 
 // Components
-import ContentWrapper from "./ContentWrapper"
-import TourCardSimple from "./TourCardSimple"
+import ContentWrapper from "../ContentWrapper"
+import SmallHeader from "../headers/SmallHeader"
+import BigHeader from "../headers/BigHeader"
+import TourCardExtended from "../TourCards/TourCardExtended"
 
 const Container = styled.div`
+  width: 100%;
+  background-image: url(${bgImage});
+  background-size: 100% 100%;
   padding: 65px 0;
-  background-color: white;
-`
-
-const SmallHeader = styled.h2`
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #a1a1a1;
-`
-
-const BigHeader = styled.h2`
-  font-size: 45px;
-  text-transform: uppercase;
-  color: #1a1a1a;
 `
 
 const ToursContainer = styled.div`
-  margin: 60px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 95px;
+  grid-template-columns: repeat(auto-fill, 550px);
+  grid-gap: 50px;
+  margin-top: 55px;
 `
 
-function TopTours() {
+function LastMinute() {
   const TOURS_QUERY = graphql`
-    query ToursQuery {
-      allMarkdownRemark {
+    query LastMinute {
+      allMarkdownRemark(
+        sort: { fields: frontmatter___date }
+        filter: { frontmatter: { lastMinute: { eq: true } } }
+        limit: 2
+      ) {
         nodes {
           id
           frontmatter {
-            price
-            promotion
-            continent
-            city
             thumbnail {
               childImageSharp {
                 fluid {
@@ -49,7 +42,6 @@ function TopTours() {
               }
             }
           }
-          excerpt(pruneLength: 110)
         }
       }
     }
@@ -60,11 +52,11 @@ function TopTours() {
   return (
     <Container>
       <ContentWrapper>
-        <SmallHeader>Nasze Topowe</SmallHeader>
-        <BigHeader>Wycieczki</BigHeader>
+        <SmallHeader dark>Wycieczki</SmallHeader>
+        <BigHeader>Last Minute</BigHeader>
         <ToursContainer>
           {data.allMarkdownRemark.nodes.map(node => (
-            <TourCardSimple tour={node} key={node.id} />
+            <TourCardExtended tour={node} key={node.id} />
           ))}
         </ToursContainer>
       </ContentWrapper>
@@ -72,4 +64,4 @@ function TopTours() {
   )
 }
 
-export default TopTours
+export default LastMinute

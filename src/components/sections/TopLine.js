@@ -3,12 +3,12 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 // Components
-import ContentWrapper from "./ContentWrapper"
+import ContentWrapper from "../ContentWrapper"
 
 // Images
-import lockImage from "../images/icons/lock.png"
-import phoneImage from "../images/icons/phone.png"
-import placeImage from "../images/icons/placeholder.png"
+import lockImage from "../../images/icons/lock.png"
+import phoneImage from "../../images/icons/phone.png"
+import placeImage from "../../images/icons/placeholder.png"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -59,7 +59,7 @@ function TopLine() {
               </span>
             </Link>
             {" / "}
-            <Link to="">logowanie</Link>
+            <Link to="/">logowanie</Link>
           </div>
         </SmallerPart>
         <SmallerPart>

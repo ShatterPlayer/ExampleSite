@@ -12,6 +12,7 @@ module.exports = {
     author: `ShatterPlayer`,
   },
   plugins: [
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,7 +36,6 @@ module.exports = {
       },
     },
     netlifyCmsPaths,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,

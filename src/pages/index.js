@@ -2,11 +2,14 @@ import React from "react"
 import { createGlobalStyle } from "styled-components"
 
 // Components
-import TopLine from "../components/TopLine"
-import Navigation from "../components/Navigation"
-import TopArea from "../components/TopArea"
-import SearchArea from "../components/SearchArea"
-import TopTours from "../components/TopTours"
+import TopLine from "../components/sections/TopLine"
+import Navigation from "../components/sections/Navigation"
+import TopArea from "../components/sections/TopArea"
+import SearchArea from "../components/sections/SearchArea"
+import TopTours from "../components/sections/TopTours"
+import LastMinute from "../components/sections/LastMinute"
+import Footer from "../components/sections/Footer"
+import CopyRight from "../components/sections/CopyRight"
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -34,6 +37,9 @@ const IndexPage = () => {
         <SearchArea />
       </TopArea>
       <TopTours />
+      <LastMinute />
+      <Footer />
+      <CopyRight />
       <GlobalStyle />
     </>
   )

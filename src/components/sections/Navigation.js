@@ -3,15 +3,15 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 // Images
-import logoImage from "../images/logo.png"
-import facebookImage from "../images/social/facebook.png"
-import youtubeImage from "../images/social/youtube.png"
-import snapImage from "../images/social/snap.png"
-import lastminuteImage from "../images/icons/label-lastminute.png"
-import promotionImage from "../images/icons/label-promotion.png"
+import logoImage from "../../images/logo.png"
+import facebookImage from "../../images/social/facebook.png"
+import youtubeImage from "../../images/social/youtube.png"
+import snapImage from "../../images/social/snap.png"
+import lastminuteImage from "../../images/icons/label-lastminute.png"
+import promotionImage from "../../images/icons/label-promotion.png"
 
 // Components
-import ContentWrapper from "./ContentWrapper"
+import ContentWrapper from "../ContentWrapper"
 
 const activeLinkStyle = {
   color: "gold",

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Image from "gatsby-background-image"
 
 // Components
-import PriceButton from "./PriceButton"
+import PriceButton from "../PriceButton"
 
 const Container = styled.div`
   display: flex;
@@ -79,6 +79,7 @@ function TourCardSimple({ tour }) {
     frontmatter: {
       continent,
       city,
+      price,
       promotion,
       thumbnail: {
         childImageSharp: { fluid },
@@ -96,7 +97,7 @@ function TourCardSimple({ tour }) {
       </ImageBackground>
       <Content>
         <Text>{excerpt}</Text>
-        <PriceButton />
+        <PriceButton price={price} />
       </Content>
     </Container>
   )

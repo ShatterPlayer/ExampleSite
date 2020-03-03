@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 const Container = styled.div`
   width: 230px;
@@ -34,20 +35,24 @@ const More = styled.div`
   font-weight: bold;
 `
 
-function PriceButton() {
+function PriceButton({ price }) {
   return (
     <Container>
       <TextContainer>
         Dostępne od
         <br />
         <BiggerText>
-          900 <b>PLN</b>
+          {price} <b>PLN</b>
         </BiggerText>
       </TextContainer>
       <VerticalLine />
       <More>Więcej</More>
     </Container>
   )
+}
+
+PriceButton.propTypes = {
+  price: PropTypes.number.isRequired,
 }
 
 export default PriceButton
