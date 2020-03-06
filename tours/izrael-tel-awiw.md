@@ -9,7 +9,7 @@ arrival: Tel Awiw
 rating: 5
 hotel: Tel Awiw
 thumbnail: /assets/panoramic-3241421_1920.jpg
-price: 123456
+price: 321123
 promotion: true
 lastMinute: false
 ---
